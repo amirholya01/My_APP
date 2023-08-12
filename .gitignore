@@ -1,0 +1,9 @@
+# dotenv environment variables file
+.env
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Node.js / Express.js
+node_modules/

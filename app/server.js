@@ -32,6 +32,10 @@ module.exports = class Application{
         mongoose.connect(DB_HOST)
             .then(() => console.log(`Connecting to MongoDB was successfully`))
             .catch((err) => console.log(`Connecting to MongoDB was failed --- ${err}`));
+        process.on("SIGINT", async () => {
+            await mongoose.connection.close();
+            process.exit(0);
+        })
     }
 
     createRoutes(){
